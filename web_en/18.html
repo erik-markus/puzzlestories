@@ -1,0 +1,122 @@
+<html>
+<head>
+    <title>poklad</title>
+<style>
+
+/* Style the input field */
+        input[type="text"] {
+            color: #000000; /* Text color (white) */
+            background-color: #c2a782; /* Background color (dark gray) */
+            border: 0px solid #999999; /* Border color (light gray) */
+            padding: 5px; /* Padding around the input field */
+            border-radius: 5px; /* Rounded corners */
+		width: 23%;
+		height: 3.2vw;
+ 	position: absolute;
+            top: 134%; /* Distance from the top of the page */
+            left: 55%; /* Distance from the left of the page */
+        }
+
+	body {background: linear-gradient(to bottom, #845834, #271305);
+            margin: 0;
+            padding: 0;
+}
+    .image-container {
+            position: relative;
+            max-width: 100%; /* Ensure the container scales with the width of the page */
+        }
+
+        .background-image {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .background-image2 {
+            position: absolute;
+            top: 102%; /* Adjust the top position */
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        
+	.button_dalej {
+            display: none; /* Initially hide the button */
+            position: absolute;
+            top: 145%;
+            left: 92%;
+            width: 80px;
+            cursor: pointer;
+        }
+
+	.cancel-button {
+	    display: none;
+	    position: absolute;
+            top: 107%; /* Adjust the top position */
+            left: 63%; /* Adjust the left position */
+            width: 80px; /* Specify the fixed width of the overlay image */
+            cursor: pointer;
+         }
+
+	 .wrong-image {
+	    display: none;
+	    position: absolute;
+            top: 120%; /* Adjust the top position */
+            left: 49%; /* Adjust the left position */
+            width: 38%; /* Specify the fixed width of the overlay image */
+         }
+
+
+
+    </style>
+</head>
+<body>
+	
+
+    <div class="image-container">
+        <img class="background-image" src="images/20_school01.png" alt="Background Image">
+	<img class="background-image2" src="images/21_school02.png" alt="otazka">
+        
+	<a href="19.html"><img class="button_dalej" src="images/button_dalej.png" alt="button_dalej"></a>
+
+    	<input type="text" id="text-input" name="user-input">
+	
+	<img class="wrong-image" src="images/wrong.png" alt="wrong-image">
+	<img class="cancel-button" src="images/button_cancel.png" alt="cancel button" onclick="location.reload()">
+    </div>
+
+<script>
+        
+  		const userInput = document.getElementById('text-input');
+		const backgroundContainer = document.querySelector('.image-container');
+		const background2 = document.querySelector('.background-image2');
+		const buttonDalej = document.querySelector('.button_dalej');
+		const buttonwrong = document.querySelector('.wrong-image');	
+		const buttoncancel = document.querySelector('.cancel-button');	
+	
+userInput.addEventListener('keydown', function (event) {
+    if (event.key === 'Enter') {
+        event.preventDefault();
+
+        const inputText = userInput.value.trim();
+
+        if (inputText === '5,8') {
+            userInput.style.display = 'none'; // Hide the text input field
+            buttonDalej.style.display = 'block';
+
+            // Change the background image of the .background-image2 element
+            background2.src = 'images/22_school03.png'; // Replace with the path to the new background image
+        } else {
+            //alert('Incorrect input. Please try again.');
+	buttonwrong.style.display = 'block';
+	buttoncancel.style.display = 'block';	
+
+        }
+    }
+    });
+    </script>
+    
+
+</body>
+</html>
