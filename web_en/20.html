@@ -59,6 +59,18 @@
             width: 38%; /* Specify the fixed width of the overlay image */
          }
 
+	.download-button {
+            position: absolute;
+            top: 173%; /* Adjust the top position */
+            left: 5%; /* Adjust the left position */
+            width: 4%;
+            cursor: pointer;
+        }
+	.download-button img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
         
 	    </style>
 </head>
@@ -67,14 +79,19 @@
 
     <div class="image-container">
         <img class="background-image" src="images/23_treasure01.jpg" alt="Background Image">
-	<img class="background-image2" src="images/24_treasure02.jpg" alt="otazka">
+	<img class="background-image2" src="images/24_treasure02c.jpg" alt="otazka">
         
 	
 
     	<input type="text" id="text-input" name="user-input">
-	<img class="wrong-image" src="images/wrong.png" alt="wrong-image">
-	<img class="cancel-button" src="images/button_cancel.png" alt="cancel button" onclick="location.reload()">
+	<img class="wrong-image" src="images/wrong.jpg" alt="wrong-image">
+	<img class="cancel-button" src="images/button_cancel.jpg" alt="cancel button" onclick="location.reload()">
 	
+	
+	<a href="images/map_printEN.pdf" class="download-button" download="map_printEN.pdf">
+            <img src="images/pdf_icon.png" alt="download-button">
+           
+
     </div>
 
 <script>
@@ -91,7 +108,7 @@ userInput.addEventListener('keydown', function (event) {
 
         const inputText = userInput.value.trim();
 
-        if (inputText === '2E1N') {
+        if (inputText === '2V1S') {
             userInput.style.display = 'none'; // Hide the text input field
            
             // Change the background image of the .background-image2 element
